@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
-st.markdown("<h1 style='text-align: center; color: black;'>Twitter - Formula 1</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: black;'> 🏎️ Twitter - Formula 1 🏎️ </h1>", unsafe_allow_html=True)
 st.write("<p align='justify'> Por Victor Augusto Souza Resende  <p align='justify'>", unsafe_allow_html=True)
 suspense_bar = st.selectbox('Selecione tipo de visualização:', ['bigram', 'trigram'], key="1")
 
