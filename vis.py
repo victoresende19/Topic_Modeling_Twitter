@@ -15,3 +15,4 @@ df = pd.read_sql_query(query, conn)
 
 fig = px.bar(df[0:6], x='termo', y='rank')
 st.plotly_chart(fig)
+st.write(f"<p align='justify'> Quantidade de dados: {len(df)} <p align='justify'>", unsafe_allow_html=True)
