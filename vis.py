@@ -7,10 +7,15 @@ st.markdown("<h1 style='text-align: center; color: black;'> 🏎️ Twitter - Fo
 st.write("<p align='justify'> Por Victor Augusto Souza Resende  <p align='justify'>", unsafe_allow_html=True)
 suspense_bar = st.selectbox('Selecione tipo de visualização:', ['bigram', 'trigram'], key="1")
 
-db = create_engine(f'sqlite:///twitter_{str(suspense_bar)}.sqlite', echo=False)
-conn = db.connect()
+# db = create_engine(f'sqlite:///twitter_{str(suspense_bar)}.sqlite', echo=False)
+# conn = db.connect()
+# query = f'SELECT * FROM twitter_{str(suspense_bar)}'
+# df = pd.read_sql_query(query, conn)
+
+db_engine = create_engine(f'sqlite:///twitter_{str(suspense_bar)}.sqlite', echo=False)
 query = f'SELECT * FROM twitter_{str(suspense_bar)}'
-df = pd.read_sql_query(query, conn)
+df = pd.read_sql_query(query, db_engine)
+
 
 
 fig = px.bar(df[0:11], x='termo', y='rank')
