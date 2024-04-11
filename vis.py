@@ -10,7 +10,7 @@ suspense_bar = st.selectbox('Selecione tipo de visualização:', ['bigram', 'tri
 db = create_engine(f'sqlite:///twitter_{str(suspense_bar)}.sqlite', echo=False)
 conn = db.raw_connection()
 query = f'SELECT * FROM twitter_{str(suspense_bar)}'
-df = pd.read_sql_query(query, db)
+df = pd.read_sql_query(query, conn)
 
 fig = px.bar(df[0:11], x='termo', y='rank')
 st.plotly_chart(fig)
